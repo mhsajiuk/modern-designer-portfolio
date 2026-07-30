@@ -1,0 +1,151 @@
+import { SkillItem, ProjectItem, TestimonialItem, BrandLogo } from "@/types";
+
+export const heroData = {
+  subtitle: "Branding | Image Making | UI/UX & Web Development",
+  title: "Aura Studio",
+  roleTitle: "Visual Designer & Developer",
+  description: "Crafting beautiful digital experiences, brand identities, and high-performance web applications with precision and modern visual aesthetics.",
+  ctaText: "Contact Me",
+  ctaLink: "#contact",
+  heroImage: "/images/hero_designer.png",
+};
+
+export const skillsData: SkillItem[] = [
+  {
+    id: "product-design",
+    title: "Product Design",
+    description: "Designing end-to-end digital product experiences centered around user needs, business goals, and scalable design systems.",
+    iconName: "Layout",
+  },
+  {
+    id: "visual-design",
+    title: "Visual Design",
+    description: "Creating captivating graphic assets, marketing illustrations, dynamic typography systems, and color palettes.",
+    iconName: "Palette",
+  },
+  {
+    id: "art-direction",
+    title: "Art Direction",
+    description: "Guiding creative concepts, visual stories, and brand identities from initial creative direction to final production.",
+    iconName: "Compass",
+  },
+  {
+    id: "ui-ux",
+    title: "UI/UX & Web Dev",
+    description: "Building responsive, modern, and performant web interfaces with React, Next.js, and modern CSS architecture.",
+    iconName: "Code2",
+  },
+];
+
+export const projectsData: ProjectItem[] = [
+  {
+    id: "project-1",
+    title: "Minimalist Brand Identity & UI",
+    category: "Branding",
+    categoryTag: "UI, Art Direction",
+    description: "Complete visual identity rebrand, editorial layout, and digital design system for modern creative studios.",
+    fullDescription: "This project showcases a clean minimalist brand language focusing on monochrome aesthetics, bold typography, and intuitive digital product layouts across web and mobile platforms.",
+    image: "/images/project_1.png",
+    tags: ["Branding", "UI/UX", "Typography"],
+    link: "https://example.com/project-1",
+    featured: true,
+  },
+  {
+    id: "project-2",
+    title: "E-Commerce Experience Design",
+    category: "UI/UX",
+    categoryTag: "Product Design, Web",
+    description: "Sleek and conversion-focused shopping interface designed for high-end retail brands.",
+    fullDescription: "A high-performance digital store built with micro-interactions, smooth checkout flows, and dynamic product showcase viewports.",
+    image: "/images/project_2.png",
+    tags: ["E-Commerce", "Next.js", "Design System"],
+    link: "https://example.com/project-2",
+    featured: true,
+  },
+  {
+    id: "project-3",
+    title: "Creative Magazine & Editorial Art",
+    category: "Art Direction",
+    categoryTag: "Art Direction, Print",
+    description: "Editorial layout, typography grid systems, and visual storytelling artwork.",
+    fullDescription: "Art direction and visual layout design created for editorial publications, blending physical print aesthetics with modern web presentation.",
+    image: "/images/project_3.png",
+    tags: ["Editorial", "Art Direction", "Graphic Design"],
+    link: "https://example.com/project-3",
+    featured: true,
+  },
+  {
+    id: "project-4",
+    title: "SaaS Analytics Dashboard",
+    category: "UI/UX",
+    categoryTag: "UI/UX, Web App",
+    description: "Complex data visualization interface crafted for real-time cloud operations monitoring.",
+    fullDescription: "Intuitive dashboard application featuring customizable data widgets, dark/light theme options, and fluid charting animations.",
+    image: "/images/project_4.png",
+    tags: ["SaaS", "Dashboard", "React"],
+    link: "https://example.com/project-4",
+    featured: false,
+  },
+  {
+    id: "project-5",
+    title: "3D Motion Graphics & Visuals",
+    category: "Branding",
+    categoryTag: "Motion, 3D Art",
+    description: "Interactive 3D renders and motion graphics built for digital campaigns.",
+    fullDescription: "A series of dynamic 3D asset compositions and animated hero elements designed to elevate product launches.",
+    image: "/images/project_5.png",
+    tags: ["3D Render", "Motion", "Visual Art"],
+    link: "https://example.com/project-5",
+    featured: false,
+  },
+  {
+    id: "project-6",
+    title: "Mobile Finance & Wallet App",
+    category: "UI/UX",
+    categoryTag: "Mobile App, UI/UX",
+    description: "Next-gen personal finance app with biometric security and instant payment transfers.",
+    fullDescription: "Mobile experience prioritizing clarity, accessibility, and micro-interactions for effortless daily financial tracking.",
+    image: "/images/project_6.png",
+    tags: ["Mobile App", "Fintech", "UX Research"],
+    link: "https://example.com/project-6",
+    featured: false,
+  },
+];
+
+export const testimonialsData: TestimonialItem[] = [
+  {
+    id: "test-1",
+    feedback: "Aura Studio delivered an exceptional visual identity and web application that elevated our brand presence tenfold. The attention to typography, micro-interactions, and visual harmony was outstanding.",
+    clientName: "Gemma Nolen",
+    clientCompany: "Google",
+    clientRole: "Senior Product Manager",
+    clientAvatar: "/images/client_avatar.png",
+    rating: 5,
+  },
+  {
+    id: "test-2",
+    feedback: "Working with this team was a seamless experience. They transformed our complex requirements into a sleek, performant Next.js web application that our clients love.",
+    clientName: "Marcus Vance",
+    clientCompany: "Apple",
+    clientRole: "Creative Director",
+    clientAvatar: "/images/client_avatar.png",
+    rating: 5,
+  },
+  {
+    id: "test-3",
+    feedback: "Remarkable eye for detail and design systems. The component architecture is clean, responsive, and easy to maintain. Highly recommended!",
+    clientName: "Sophia Martinez",
+    clientCompany: "Nike",
+    clientRole: "Lead Product Designer",
+    clientAvatar: "/images/client_avatar.png",
+    rating: 5,
+  },
+];
+
+export const brandLogos: BrandLogo[] = [
+  { id: "google", name: "Google" },
+  { id: "nike", name: "Nike" },
+  { id: "samsung", name: "Samsung" },
+  { id: "apple", name: "Apple" },
+  { id: "adidas", name: "Adidas" },
+];
