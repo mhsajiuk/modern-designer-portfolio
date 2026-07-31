@@ -13,11 +13,11 @@ export default function Hero() {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
-  const rotateX = useSpring(useTransform(mouseY, [-0.5, 0.5], [12, -12]), {
+  const rotateX = useSpring(useTransform(mouseY, [-0.5, 0.5], [10, -10]), {
     stiffness: 200,
     damping: 20,
   });
-  const rotateY = useSpring(useTransform(mouseX, [-0.5, 0.5], [-12, 12]), {
+  const rotateY = useSpring(useTransform(mouseX, [-0.5, 0.5], [-10, 10]), {
     stiffness: 200,
     damping: 20,
   });
@@ -65,7 +65,7 @@ export default function Hero() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card text-xs font-bold tracking-wider uppercase text-zinc-200 shadow-lg border border-purple-500/30"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#121318] text-xs font-bold tracking-wider uppercase text-zinc-200 shadow-md border border-purple-500/30"
             >
               <Zap className="w-3.5 h-3.5 text-purple-400 animate-bounce" />
               <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent font-epilogue">
@@ -76,7 +76,9 @@ export default function Hero() {
             {/* Main Heading */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.1] font-epilogue">
               Aura Studio <br className="hidden sm:inline" />
-              <span className="shimmer-text">Desain Visual & Web</span>
+              <span className="bg-gradient-to-r from-white via-purple-300 to-pink-400 bg-clip-text text-transparent">
+                Desain Visual & Web
+              </span>
             </h1>
 
             {/* Paragraph Bio */}
@@ -84,7 +86,7 @@ export default function Hero() {
               {heroData.description}
             </p>
 
-            {/* CTA Buttons & Stats */}
+            {/* CTA Buttons */}
             <div className="pt-4 flex flex-wrap items-center gap-4 sm:gap-6">
               <Link
                 href={heroData.ctaLink}
@@ -97,36 +99,36 @@ export default function Hero() {
 
               <Link
                 href="#work"
-                className="inline-flex items-center gap-2 px-7 py-4 rounded-2xl glass-card text-zinc-200 font-bold text-sm border border-zinc-800 hover:bg-zinc-800/80 hover:text-white transition-all shadow-md font-epilogue"
+                className="inline-flex items-center gap-2 px-7 py-4 rounded-2xl bg-[#121318] text-zinc-200 font-bold text-sm border border-zinc-800 hover:bg-zinc-800/80 hover:text-white transition-all shadow-md font-epilogue"
               >
                 <span>Jelajahi Karya</span>
               </Link>
             </div>
 
-            {/* 21st.dev Animated Stats Counter Badges */}
-            <div className="pt-8 border-t border-zinc-800/80 grid grid-cols-3 gap-6 max-w-lg">
+            {/* Clean Stats Counter Badges */}
+            <div className="pt-8 border-t border-zinc-800/80 flex flex-wrap items-center gap-4 sm:gap-6 max-w-xl">
               <motion.div
-                whileHover={{ scale: 1.05 }}
-                className="p-3.5 rounded-2xl glass-card border border-zinc-800 shadow-md"
+                whileHover={{ scale: 1.03 }}
+                className="flex-1 min-w-[130px] p-4 rounded-2xl bg-[#121318] border border-zinc-800 shadow-md text-center sm:text-left"
               >
-                <p className="text-2xl font-extrabold text-white font-epilogue">5+ Thn</p>
-                <p className="text-xs font-medium text-zinc-400 font-sans">Pengalaman</p>
+                <p className="text-xl sm:text-2xl font-black text-white font-epilogue whitespace-nowrap">5+ Tahun</p>
+                <p className="text-xs font-medium text-zinc-400 font-sans mt-0.5">Pengalaman</p>
               </motion.div>
 
               <motion.div
-                whileHover={{ scale: 1.05 }}
-                className="p-3.5 rounded-2xl glass-card border border-zinc-800 shadow-md"
+                whileHover={{ scale: 1.03 }}
+                className="flex-1 min-w-[130px] p-4 rounded-2xl bg-[#121318] border border-zinc-800 shadow-md text-center sm:text-left"
               >
-                <p className="text-2xl font-extrabold text-white font-epilogue">40+ Proyek</p>
-                <p className="text-xs font-medium text-zinc-400 font-sans">Karya Selesai</p>
+                <p className="text-xl sm:text-2xl font-black text-white font-epilogue whitespace-nowrap">40+ Proyek</p>
+                <p className="text-xs font-medium text-zinc-400 font-sans mt-0.5">Karya Selesai</p>
               </motion.div>
 
               <motion.div
-                whileHover={{ scale: 1.05 }}
-                className="p-3.5 rounded-2xl glass-card border border-zinc-800 shadow-md"
+                whileHover={{ scale: 1.03 }}
+                className="flex-1 min-w-[130px] p-4 rounded-2xl bg-[#121318] border border-zinc-800 shadow-md text-center sm:text-left"
               >
-                <p className="text-2xl font-extrabold text-white font-epilogue">100%</p>
-                <p className="text-xs font-medium text-zinc-400 font-sans">Klien Puas</p>
+                <p className="text-xl sm:text-2xl font-black text-white font-epilogue whitespace-nowrap">100%</p>
+                <p className="text-xs font-medium text-zinc-400 font-sans mt-0.5">Klien Puas</p>
               </motion.div>
             </div>
           </motion.div>
@@ -165,7 +167,7 @@ export default function Hero() {
               <motion.div
                 animate={{ y: [0, -6, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute bottom-6 left-6 right-6 glass-card p-4 rounded-2xl shadow-2xl border border-zinc-700/60"
+                className="absolute bottom-6 left-6 right-6 bg-[#121318]/90 backdrop-blur-md p-4 rounded-2xl shadow-2xl border border-zinc-700/60"
               >
                 <div className="flex items-center gap-3">
                   <div className="relative flex items-center justify-center">

@@ -23,32 +23,17 @@
     color: var(--foreground);
     font-family: var(--font-epilogue), system-ui, -apple-system, sans-serif;
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 }
 
-/* 21st.dev Dark Theme Styled Custom Utilities & Animations */
+/* Custom Utilities */
 .glass-card {
-  background: rgba(18, 19, 24, 0.75);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: rgba(18, 19, 24, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.glass-card-hover {
-  transition: all 0.4s ease;
-}
-
-.glass-card-hover:hover {
-  background: rgba(24, 25, 32, 0.9);
-  border-color: rgba(139, 92, 246, 0.4);
-  box-shadow: 0 0 30px rgba(139, 92, 246, 0.15);
-}
-
-.dark-glass-card {
-  background: rgba(12, 13, 17, 0.85);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .custom-scrollbar::-webkit-scrollbar {
@@ -72,63 +57,11 @@
 .bg-grid-pattern {
   background-size: 40px 40px;
   background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
 }
 
 .bg-dots-pattern {
-  background-image: radial-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
   background-size: 24px 24px;
-}
-
-/* Animated Shimmer Text for Dark Mode */
-.shimmer-text {
-  background: linear-gradient(90deg, #ffffff 0%, #a855f7 40%, #ec4899 70%, #ffffff 100%);
-  background-size: 200% auto;
-  color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
-  animation: shimmerText 4s linear infinite;
-}
-
-@keyframes shimmerText {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-/* Pulse Glow Keyframes */
-@keyframes pulseGlow {
-  0%, 100% {
-    opacity: 0.3;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.7;
-    transform: scale(1.15);
-  }
-}
-
-.animate-pulse-glow {
-  animation: pulseGlow 6s ease-in-out infinite;
-}
-
-/* Float Keyframes */
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-10px) rotate(1deg);
-  }
-}
-
-.animate-float {
-  animation: float 5s ease-in-out infinite;
 }

@@ -26,9 +26,9 @@ export default function Portfolio() {
 
       <div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 z-10">
         {/* Header Section */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-950/60 border border-purple-800/50 text-purple-300 text-xs font-bold uppercase tracking-widest font-epilogue mb-2">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-950/60 border border-purple-800/50 text-purple-300 text-xs font-bold uppercase tracking-widest font-epilogue mb-3">
               <Sparkles className="w-3.5 h-3.5 text-purple-400" />
               <span>Karya Terpilih</span>
             </div>
@@ -37,33 +37,28 @@ export default function Portfolio() {
             </h2>
           </div>
 
-          {/* 21st.dev Animated Sliding Pill Filter Tabs */}
-          <div className="flex flex-wrap p-1.5 rounded-full bg-[#121318] border border-zinc-800 shadow-inner">
+          {/* Responsive Category Filter Tabs */}
+          <div className="flex flex-wrap items-center gap-2.5 sm:gap-3">
             {categories.map((cat) => {
               const isActive = selectedCategory === cat;
               return (
                 <button
                   key={cat}
                   onClick={() => setSelectedCategory(cat)}
-                  className={`relative px-5 py-2 rounded-full text-xs font-bold transition-colors duration-300 font-epilogue ${
-                    isActive ? "text-white" : "text-zinc-400 hover:text-white"
+                  className={`relative px-5 py-2.5 rounded-2xl text-xs font-bold transition-all duration-300 font-epilogue ${
+                    isActive
+                      ? "bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-lg shadow-purple-950/50 border border-purple-500/50 scale-105"
+                      : "bg-[#121318] text-zinc-400 hover:text-white border border-zinc-800 hover:border-zinc-700"
                   }`}
                 >
-                  {isActive && (
-                    <motion.div
-                      layoutId="activeCategoryPill"
-                      className="absolute inset-0 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-full shadow-lg shadow-purple-900/50"
-                      transition={{ type: "spring", stiffness: 400, damping: 30 }}
-                    />
-                  )}
-                  <span className="relative z-10">{cat}</span>
+                  {cat}
                 </button>
               );
             })}
           </div>
         </div>
 
-        {/* Gallery Cards Grid with Layout Animations */}
+        {/* Gallery Cards Grid */}
         <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
           <AnimatePresence mode="popLayout">
             {filteredProjects.map((project, index) => (
@@ -73,9 +68,9 @@ export default function Portfolio() {
                 initial={{ opacity: 0, scale: 0.9, y: 20 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.9, y: 20 }}
-                transition={{ duration: 0.4, delay: index * 0.05 }}
+                transition={{ duration: 0.35, delay: index * 0.05 }}
                 onClick={() => setActiveModalProject(project)}
-                className="group cursor-pointer flex flex-col bg-[#121318] rounded-3xl p-3 border border-zinc-800 hover:border-purple-500/50 shadow-lg hover:shadow-2xl hover:shadow-purple-950/30 transition-all duration-500 transform hover:-translate-y-1.5"
+                className="group cursor-pointer flex flex-col bg-[#121318] rounded-3xl p-3 border border-zinc-800 hover:border-purple-500/50 shadow-lg hover:shadow-2xl hover:shadow-purple-950/30 transition-all duration-300 transform hover:-translate-y-1.5"
               >
                 {/* Image Thumbnail Container */}
                 <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-zinc-900 mb-4 border border-zinc-800">
@@ -85,7 +80,7 @@ export default function Portfolio() {
                     fill
                     unoptimized
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    className="object-cover object-center group-hover:scale-108 transition-transform duration-700 ease-out opacity-90 group-hover:opacity-100"
+                    className="object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-out opacity-90 group-hover:opacity-100"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#09090b] via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-4">
                     {project.featured && (
