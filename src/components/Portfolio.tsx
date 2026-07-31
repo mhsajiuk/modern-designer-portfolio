@@ -2,11 +2,11 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { projectsData } from "@/data/portfolioData";
 import { ProjectItem } from "@/types";
 import ProjectModal from "./ProjectModal";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Sparkles, ExternalLink } from "lucide-react";
 
 export default function Portfolio() {
   const [selectedCategory, setSelectedCategory] = useState("Semua");
@@ -20,78 +20,110 @@ export default function Portfolio() {
       : projectsData.filter((p) => p.category === selectedCategory);
 
   return (
-    <section id="work" className="py-24 bg-white border-t border-gray-100">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+    <section id="work" className="relative py-24 bg-white border-t border-gray-100 overflow-hidden">
+      {/* Background Dots Accent */}
+      <div className="absolute inset-0 bg-dots-pattern opacity-30 pointer-events-none" />
+
+      <div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 z-10">
         {/* Header Section */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
           <div>
-            <span className="text-xs font-bold tracking-widest text-gray-400 uppercase font-epilogue">
-              Karya Terpilih
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#2D2D2D] tracking-tight mt-2 font-epilogue">
-              Karya Terbaru
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-50 text-purple-700 text-xs font-bold uppercase tracking-widest font-epilogue mb-2">
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>Karya Terpilih</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#2D2D2D] tracking-tight font-epilogue">
+              Galeri Proyek Terbaru
             </h2>
           </div>
 
-          {/* Filter Tabs */}
-          <div className="flex flex-wrap gap-2">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setSelectedCategory(cat)}
-                className={`px-4 py-2 rounded-full text-xs font-semibold transition-all ${
-                  selectedCategory === cat
-                    ? "bg-[#2D2D2D] text-white shadow-sm"
-                    : "bg-gray-100 text-gray-600 hover:bg-gray-200"
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
+          {/* 21st.dev Animated Sliding Pill Filter Tabs */}
+          <div className="flex flex-wrap p-1.5 rounded-full bg-gray-100/80 backdrop-blur-md border border-gray-200/60 shadow-inner">
+            {categories.map((cat) => {
+              const isActive = selectedCategory === cat;
+              return (
+                <button
+                  key={cat}
+                  onClick={() => setSelectedCategory(cat)}
+                  className={`relative px-5 py-2 rounded-full text-xs font-bold transition-colors duration-300 font-epilogue ${
+                    isActive ? "text-white" : "text-gray-600 hover:text-[#2D2D2D]"
+                  }`}
+                >
+                  {isActive && (
+                    <motion.div
+                      layoutId="activeCategoryPill"
+                      className="absolute inset-0 bg-[#2D2D2D] rounded-full shadow-md"
+                      transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                    />
+                  )}
+                  <span className="relative z-10">{cat}</span>
+                </button>
+              );
+            })}
           </div>
         </div>
 
-        {/* Gallery Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
-          {filteredProjects.map((project, index) => (
-            <motion.div
-              key={project.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              onClick={() => setActiveModalProject(project)}
-              className="group cursor-pointer flex flex-col bg-white"
-            >
-              {/* Image Thumbnail Container */}
-              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-gray-100 mb-4 border border-gray-100">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  unoptimized
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
-                  <div className="w-12 h-12 rounded-full bg-white text-[#2D2D2D] opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 flex items-center justify-center shadow-lg">
-                    <ArrowUpRight className="w-5 h-5" />
+        {/* Gallery Cards Grid with Layout Animations */}
+        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
+          <AnimatePresence mode="popLayout">
+            {filteredProjects.map((project, index) => (
+              <motion.div
+                key={project.id}
+                layout
+                initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.9, y: 20 }}
+                transition={{ duration: 0.4, delay: index * 0.05 }}
+                onClick={() => setActiveModalProject(project)}
+                className="group cursor-pointer flex flex-col bg-white rounded-3xl p-3 border border-gray-100 hover:border-purple-500/30 shadow-sm hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-1.5"
+              >
+                {/* Image Thumbnail Container */}
+                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-gray-100 mb-4 border border-gray-100/80">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    unoptimized
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-cover object-center group-hover:scale-108 transition-transform duration-700 ease-out"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-4">
+                    {project.featured && (
+                      <div className="self-start px-3 py-1 rounded-full bg-amber-500/90 text-white text-[10px] font-extrabold uppercase tracking-wider shadow-md backdrop-blur-sm flex items-center gap-1 font-epilogue">
+                        <Sparkles className="w-3 h-3" />
+                        <span>Unggulan</span>
+                      </div>
+                    )}
+                    <div className="self-end w-12 h-12 rounded-full bg-white text-[#2D2D2D] transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 flex items-center justify-center shadow-xl">
+                      <ArrowUpRight className="w-5 h-5" />
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              {/* Title & Category Info */}
-              <div className="space-y-1">
-                <h3 className="text-lg font-bold text-[#2D2D2D] font-epilogue group-hover:text-gray-600 transition-colors">
-                  {project.title}
-                </h3>
-                <p className="text-xs font-medium text-gray-500">
-                  {project.categoryTag}
-                </p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+                {/* Title & Category Info */}
+                <div className="px-2 pb-2 space-y-1.5">
+                  <div className="flex items-center justify-between">
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-purple-600 font-epilogue">
+                      {project.categoryTag}
+                    </span>
+                    {project.link && (
+                      <span className="text-[11px] font-medium text-gray-400 flex items-center gap-1">
+                        <span>Live Demo</span>
+                        <ExternalLink className="w-3 h-3" />
+                      </span>
+                    )}
+                  </div>
+                  <h3 className="text-lg font-bold text-[#2D2D2D] font-epilogue group-hover:text-purple-700 transition-colors line-clamp-1">
+                    {project.title}
+                  </h3>
+                  <p className="text-xs text-gray-500 line-clamp-2 leading-relaxed font-sans">
+                    {project.description}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </motion.div>
       </div>
 
       {/* Project Detail Modal */}

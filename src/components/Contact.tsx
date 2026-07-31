@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import confetti from "canvas-confetti";
-import { Send, Mail, MapPin, CheckCircle2 } from "lucide-react";
+import { Send, Mail, MapPin, CheckCircle2, Sparkles } from "lucide-react";
 
 // Custom SVG icons for social platforms
 const GithubIcon = ({ className = "w-5 h-5" }: { className?: string }) => (
@@ -49,16 +49,20 @@ export default function Contact() {
       setLoading(false);
       setSubmitted(true);
       confetti({
-        particleCount: 100,
-        spread: 70,
+        particleCount: 120,
+        spread: 80,
         origin: { y: 0.6 },
+        colors: ["#8b5cf6", "#ec4899", "#3b82f6", "#10b981", "#f59e0b"],
       });
     }, 800);
   };
 
   return (
-    <section id="contact" className="py-24 bg-white border-t border-gray-100">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+    <section id="contact" className="relative py-24 bg-white border-t border-gray-100 overflow-hidden">
+      {/* Background Lighting Accent */}
+      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full bg-gradient-to-tr from-purple-400/10 to-indigo-400/10 blur-3xl pointer-events-none" />
+
+      <div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           {/* Left Column: Heading & Description & Social Icons */}
           <motion.div
@@ -69,44 +73,46 @@ export default function Contact() {
             className="lg:col-span-6 space-y-8"
           >
             <div>
-              <span className="text-xs font-bold tracking-widest text-gray-400 uppercase font-epilogue">
-                Hubungi Kami
-              </span>
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-50 text-purple-700 text-xs font-bold uppercase tracking-widest font-epilogue mb-2">
+                <Sparkles className="w-3.5 h-3.5" />
+                <span>Mari Berkolaborasi</span>
+              </div>
               <h2 className="text-4xl sm:text-5xl font-extrabold text-[#2D2D2D] tracking-tight mt-2 font-epilogue leading-tight">
-                Mari bekerja sama
+                Punya Proyek Impian? <br />
+                <span className="shimmer-text">Hubungi Saya.</span>
               </h2>
             </div>
 
-            <p className="text-gray-600 text-base sm:text-lg leading-relaxed max-w-md">
-              Punya ide proyek, pertanyaan, atau ingin berkolaborasi untuk merancang identitas brand dan aplikasi web? Jangan ragu untuk menghubungi kami.
+            <p className="text-gray-600 text-base sm:text-lg leading-relaxed max-w-md font-sans">
+              Saya selalu terbuka untuk mendiskusikan desain produk baru, branding, atau proyek aplikasi web modern. Mari wujudkan ide hebat Anda bersama.
             </p>
 
             {/* Quick Contact Info */}
             <div className="space-y-4 pt-2">
               <div className="flex items-center gap-4 text-gray-700">
-                <div className="w-10 h-10 rounded-xl bg-gray-100 flex items-center justify-center">
-                  <Mail className="w-5 h-5 text-[#2D2D2D]" />
+                <div className="w-12 h-12 rounded-2xl bg-purple-50 flex items-center justify-center text-purple-700 shrink-0 shadow-sm">
+                  <Mail className="w-5 h-5" />
                 </div>
                 <div>
-                  <p className="text-xs text-gray-400 font-medium">Email Kami</p>
-                  <a href="mailto:hello@aurastudio.com" className="text-sm font-semibold hover:underline">
-                    hello@aurastudio.com
+                  <p className="text-xs text-gray-400 font-bold uppercase tracking-wider font-epilogue">Email Kami</p>
+                  <a href="mailto:hello@aurastudio.id" className="text-sm sm:text-base font-extrabold text-[#2D2D2D] hover:text-purple-700 transition-colors font-epilogue">
+                    hello@aurastudio.id
                   </a>
                 </div>
               </div>
 
               <div className="flex items-center gap-4 text-gray-700">
-                <div className="w-10 h-10 rounded-xl bg-gray-100 flex items-center justify-center">
-                  <MapPin className="w-5 h-5 text-[#2D2D2D]" />
+                <div className="w-12 h-12 rounded-2xl bg-purple-50 flex items-center justify-center text-purple-700 shrink-0 shadow-sm">
+                  <MapPin className="w-5 h-5" />
                 </div>
                 <div>
-                  <p className="text-xs text-gray-400 font-medium">Lokasi</p>
-                  <p className="text-sm font-semibold">Jakarta, Indonesia / Remote Worldwide</p>
+                  <p className="text-xs text-gray-400 font-bold uppercase tracking-wider font-epilogue">Lokasi Studio</p>
+                  <p className="text-sm sm:text-base font-extrabold text-[#2D2D2D] font-epilogue">Jakarta & Bandung, Indonesia</p>
                 </div>
               </div>
             </div>
 
-            {/* Social Icons matching Figma template */}
+            {/* Social Icons */}
             <div className="pt-6 border-t border-gray-100">
               <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4 font-epilogue">
                 Terhubung di Media Sosial
@@ -119,16 +125,18 @@ export default function Contact() {
                   { icon: TwitterIcon, href: "https://twitter.com", name: "Twitter" },
                   { icon: InstagramIcon, href: "https://instagram.com", name: "Instagram" },
                 ].map((social) => (
-                  <a
+                  <motion.a
                     key={social.name}
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-11 h-11 rounded-xl bg-gray-100 flex items-center justify-center text-[#2D2D2D] hover:bg-[#2D2D2D] hover:text-white transition-all transform hover:-translate-y-1"
+                    whileHover={{ scale: 1.1, y: -2 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="w-11 h-11 rounded-xl bg-gray-100/80 flex items-center justify-center text-[#2D2D2D] hover:bg-[#2D2D2D] hover:text-white transition-all shadow-sm"
                     aria-label={social.name}
                   >
                     <social.icon className="w-5 h-5" />
-                  </a>
+                  </motion.a>
                 ))}
               </div>
             </div>
@@ -140,25 +148,30 @@ export default function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="lg:col-span-6 bg-gray-50/70 p-8 sm:p-10 rounded-3xl border border-gray-200/80 shadow-sm"
+            className="lg:col-span-6 bg-[#FAF9F6] p-8 sm:p-10 rounded-3xl border border-gray-200/80 shadow-lg relative overflow-hidden"
           >
             {submitted ? (
               <div className="py-12 text-center space-y-4">
-                <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto">
+                <motion.div
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 15 }}
+                  className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto shadow-md"
+                >
                   <CheckCircle2 className="w-8 h-8" />
-                </div>
+                </motion.div>
                 <h3 className="text-2xl font-bold text-[#2D2D2D] font-epilogue">
                   Pesan Berhasil Terkirim!
                 </h3>
-                <p className="text-gray-600 text-sm max-w-sm mx-auto">
-                  Terima kasih telah menghubungi kami. Kami akan merespons pesan Anda dalam 24 jam.
+                <p className="text-gray-600 text-sm max-w-sm mx-auto font-sans">
+                  Terima kasih telah menghubungi kami. Kami akan merespons pesan Anda dalam kurun waktu 24 jam.
                 </p>
                 <button
                   onClick={() => {
                     setSubmitted(false);
                     setFormData({ name: "", email: "", message: "" });
                   }}
-                  className="mt-4 px-6 py-2.5 rounded-xl bg-[#2D2D2D] text-white text-xs font-semibold hover:bg-black"
+                  className="mt-4 px-6 py-3 rounded-xl bg-[#2D2D2D] text-white text-xs font-bold uppercase tracking-wider hover:bg-black font-epilogue transition-all"
                 >
                   Kirim Pesan Lain
                 </button>
@@ -176,7 +189,7 @@ export default function Contact() {
                     placeholder="Masukkan nama Anda"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-4 py-3.5 rounded-xl bg-white border border-gray-200 text-[#2D2D2D] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#2D2D2D] transition-all"
+                    className="w-full px-4 py-3.5 rounded-xl bg-white border border-gray-200 text-[#2D2D2D] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-600 transition-all font-sans text-sm"
                   />
                 </div>
 
@@ -191,13 +204,13 @@ export default function Contact() {
                     placeholder="nama@email.com"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-4 py-3.5 rounded-xl bg-white border border-gray-200 text-[#2D2D2D] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#2D2D2D] transition-all"
+                    className="w-full px-4 py-3.5 rounded-xl bg-white border border-gray-200 text-[#2D2D2D] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-600 transition-all font-sans text-sm"
                   />
                 </div>
 
                 <div>
                   <label htmlFor="message" className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2 font-epilogue">
-                    Pesan Anda
+                    Pesan Detail Proyek
                   </label>
                   <textarea
                     id="message"
@@ -206,14 +219,16 @@ export default function Contact() {
                     placeholder="Ceritakan tentang proyek atau ide Anda..."
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full px-4 py-3.5 rounded-xl bg-white border border-gray-200 text-[#2D2D2D] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#2D2D2D] transition-all resize-none"
+                    className="w-full px-4 py-3.5 rounded-xl bg-white border border-gray-200 text-[#2D2D2D] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-600 transition-all resize-none font-sans text-sm"
                   />
                 </div>
 
-                <button
+                <motion.button
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
                   type="submit"
                   disabled={loading}
-                  className="w-full py-4 rounded-xl bg-[#2D2D2D] text-white font-bold text-sm hover:bg-black transition-all shadow-md flex items-center justify-center gap-2 group disabled:opacity-70"
+                  className="w-full py-4 rounded-2xl bg-[#2D2D2D] text-white font-bold text-sm hover:bg-black transition-all shadow-xl flex items-center justify-center gap-2 group disabled:opacity-70 font-epilogue relative overflow-hidden"
                 >
                   {loading ? (
                     <span>Mengirim...</span>
@@ -223,7 +238,7 @@ export default function Contact() {
                       <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </>
                   )}
-                </button>
+                </motion.button>
               </form>
             )}
           </motion.div>
