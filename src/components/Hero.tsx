@@ -26,9 +26,9 @@ export default function Hero() {
 
             {/* Main Heading */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#2D2D2D] tracking-tight leading-[1.1] font-epilogue">
-              Visual Designer & <br className="hidden sm:inline" />
+              Desainer Visual & <br className="hidden sm:inline" />
               <span className="relative inline-block text-gray-800">
-                Web Developer
+                Pengembang Web
                 <span className="absolute bottom-1 left-0 w-full h-3 bg-gray-200/60 -z-10 rounded-sm"></span>
               </span>
             </h1>
@@ -52,23 +52,23 @@ export default function Hero() {
                 href="#work"
                 className="inline-flex items-center gap-2 px-7 py-4 rounded-xl border border-gray-300 text-[#2D2D2D] font-semibold hover:bg-gray-50 transition-all"
               >
-                <span>Explore Work</span>
+                <span>Jelajahi Karya</span>
               </Link>
             </div>
 
             {/* Quick Highlights */}
             <div className="pt-8 border-t border-gray-100 grid grid-cols-3 gap-6 max-w-lg">
               <div>
-                <p className="text-2xl font-extrabold text-[#2D2D2D] font-epilogue">5+ Years</p>
-                <p className="text-xs font-medium text-gray-500">Experience</p>
+                <p className="text-2xl font-extrabold text-[#2D2D2D] font-epilogue">5+ Tahun</p>
+                <p className="text-xs font-medium text-gray-500">Pengalaman</p>
               </div>
               <div>
-                <p className="text-2xl font-extrabold text-[#2D2D2D] font-epilogue">40+ Apps</p>
-                <p className="text-xs font-medium text-gray-500">Completed Projects</p>
+                <p className="text-2xl font-extrabold text-[#2D2D2D] font-epilogue">40+ Proyek</p>
+                <p className="text-xs font-medium text-gray-500">Proyek Selesai</p>
               </div>
               <div>
                 <p className="text-2xl font-extrabold text-[#2D2D2D] font-epilogue">99%</p>
-                <p className="text-xs font-medium text-gray-500">Client Satisfaction</p>
+                <p className="text-xs font-medium text-gray-500">Kepuasan Klien</p>
               </div>
             </div>
           </motion.div>
@@ -83,7 +83,7 @@ export default function Hero() {
             <div className="relative w-full max-w-md aspect-[4/5] rounded-3xl bg-gradient-to-tr from-gray-100 via-gray-50 to-white p-4 border border-gray-200/80 shadow-2xl overflow-hidden group">
               <Image
                 src={heroData.heroImage}
-                alt="Aura Studio Designer"
+                alt="Aura Studio Desainer"
                 fill
                 priority
                 sizes="(max-width: 768px) 100vw, 50vw"
@@ -100,8 +100,8 @@ export default function Hero() {
                 <div className="flex items-center gap-3">
                   <div className="w-3 h-3 rounded-full bg-emerald-500 animate-pulse"></div>
                   <div>
-                    <p className="text-xs font-bold text-[#2D2D2D]">Available for Projects</p>
-                    <p className="text-[11px] text-gray-500">Accepting new clients & opportunities</p>
+                    <p className="text-xs font-bold text-[#2D2D2D]">Tersedia untuk Proyek Baru</p>
+                    <p className="text-[11px] text-gray-500">Menerima klien & peluang kolaborasi</p>
                   </div>
                 </div>
               </motion.div>

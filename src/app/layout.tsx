@@ -15,13 +15,13 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://modern-designer-portfolio.vercel.app"),
-  title: "Aura Studio | Modern Visual Designer & Web Portfolio",
-  description: "Portfolio of Aura Studio - Visual Designer & Web Developer showcasing product design, visual branding, art direction, and high-performance web applications.",
-  keywords: ["Visual Designer", "Web Developer", "UI/UX Design", "Product Design", "Art Direction", "React Next.js Portfolio"],
+  title: "Aura Studio | Portofolio Desainer Visual & Pengembang Web",
+  description: "Portofolio Aura Studio - Desainer Visual & Pengembang Web menampilkan desain produk, identitas brand, pengarahan seni, dan aplikasi web berkinerja tinggi.",
+  keywords: ["Desainer Visual", "Pengembang Web", "Desain UI/UX", "Desain Produk", "Art Direction", "Portofolio React Next.js"],
   authors: [{ name: "Aura Studio" }],
   openGraph: {
-    title: "Aura Studio | Visual Designer & Developer",
-    description: "Crafting beautiful digital experiences, brand identities, and high-performance web applications.",
+    title: "Aura Studio | Desainer Visual & Pengembang Web",
+    description: "Menciptakan pengalaman digital yang indah, identitas brand yang kuat, dan aplikasi web berkinerja tinggi.",
     url: "https://modern-designer-portfolio.vercel.app",
     siteName: "Aura Studio Portfolio",
     images: [
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
         alt: "Aura Studio Portfolio",
       },
     ],
-    locale: "en_US",
+    locale: "id_ID",
     type: "website",
   },
 };
@@ -43,7 +43,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${epilogue.variable} ${inter.variable} scroll-smooth`}>
+    <html lang="id" className={`${epilogue.variable} ${inter.variable} scroll-smooth`}>
       <body className="min-h-screen bg-white text-[#2D2D2D] antialiased selection:bg-[#2D2D2D] selection:text-white">
         {children}
       </body>

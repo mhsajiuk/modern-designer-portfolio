@@ -7,8 +7,8 @@ export default function BrandLogos() {
   return (
     <section className="py-12 bg-white border-y border-gray-100">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        <p className="text-center text-xs font-semibold tracking-widest text-gray-400 uppercase mb-8">
-          Trusted by Industry Leaders & Brands
+        <p className="text-center text-xs font-semibold tracking-widest text-gray-400 uppercase mb-8 font-epilogue">
+          Dipercaya oleh Perusahaan & Studio Terkemuka
         </p>
 
         <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-16 lg:gap-24 opacity-80 hover:opacity-100 transition-opacity">

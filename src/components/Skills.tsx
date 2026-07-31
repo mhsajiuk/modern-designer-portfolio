@@ -18,13 +18,13 @@ export default function Skills() {
         {/* Section Header */}
         <div className="max-w-3xl mb-16">
           <span className="text-xs font-bold tracking-widest text-gray-400 uppercase font-epilogue">
-            Core Expertise
+            Keahlian Utama
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-[#2D2D2D] tracking-tight mt-2 font-epilogue">
-            Specialized Skills & Capabilities
+            Spesialisasi & Kapabilitas
           </h2>
           <p className="text-gray-600 mt-4 text-base leading-relaxed">
-            Combining visual aesthetics with engineering craftsmanship to build cohesive digital products and brand solutions.
+            Menggabungkan estetika visual dengan keahlian rekayasa web untuk membangun produk digital dan solusi brand yang kohesif.
           </p>
         </div>
 

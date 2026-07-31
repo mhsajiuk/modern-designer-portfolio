@@ -18,7 +18,7 @@ export default function Footer() {
           </Link>
           <span className="hidden sm:inline text-gray-600">|</span>
           <p className="text-xs text-gray-400">
-            © {new Date().getFullYear()} Aura Studio. Designed & Developed with Next.js & Tailwind CSS.
+            © {new Date().getFullYear()} Aura Studio. Dirancang & Dikembangkan dengan Next.js & Tailwind CSS.
           </p>
         </div>
 
@@ -26,9 +26,9 @@ export default function Footer() {
         <button
           onClick={scrollToTop}
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 hover:bg-white/20 text-xs font-semibold text-white transition-all"
-          aria-label="Back to top"
+          aria-label="Kembali ke atas"
         >
-          <span>Back to Top</span>
+          <span>Kembali ke Atas</span>
           <ArrowUp className="w-4 h-4" />
         </button>
       </div>

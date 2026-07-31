@@ -12,13 +12,13 @@ export default function Testimonials() {
         {/* Header */}
         <div className="max-w-3xl mb-16">
           <span className="text-xs font-bold tracking-widest text-gray-400 uppercase font-epilogue">
-            Testimonials
+            Testimoni Klien
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-[#2D2D2D] tracking-tight mt-2 font-epilogue">
-            Client Feedback & Reviews
+            Ulasan & Pengalaman Klien
           </h2>
           <p className="text-gray-600 mt-4 text-base">
-            What partners and clients say about working together.
+            Apa kata mitra dan klien tentang pengalaman berkolaborasi bersama kami.
           </p>
         </div>
 
@@ -47,7 +47,8 @@ export default function Testimonials() {
                       src={item.clientAvatar}
                       alt={item.clientName}
                       fill
-                      className="object-cover object-top"
+                      unoptimized
+                      className="object-cover object-center"
                     />
                   </div>
                   <div>

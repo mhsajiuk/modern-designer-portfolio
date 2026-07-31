@@ -3,9 +3,9 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import confetti from "canvas-confetti";
-import { Send, Mail, MapPin, CheckCircle2, Globe } from "lucide-react";
+import { Send, Mail, MapPin, CheckCircle2 } from "lucide-react";
 
-// Clean custom SVG icons for social platforms
+// Custom SVG icons for social platforms
 const GithubIcon = ({ className = "w-5 h-5" }: { className?: string }) => (
   <svg className={className} fill="currentColor" viewBox="0 0 24 24">
     <path fillRule="evenodd" clipRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
@@ -70,15 +70,15 @@ export default function Contact() {
           >
             <div>
               <span className="text-xs font-bold tracking-widest text-gray-400 uppercase font-epilogue">
-                Get In Touch
+                Hubungi Kami
               </span>
               <h2 className="text-4xl sm:text-5xl font-extrabold text-[#2D2D2D] tracking-tight mt-2 font-epilogue leading-tight">
-                Let's work together
+                Mari bekerja sama
               </h2>
             </div>
 
             <p className="text-gray-600 text-base sm:text-lg leading-relaxed max-w-md">
-              Have a project in mind, a question, or want to collaborate on brand identity and web development? Feel free to reach out directly.
+              Punya ide proyek, pertanyaan, atau ingin berkolaborasi untuk merancang identitas brand dan aplikasi web? Jangan ragu untuk menghubungi kami.
             </p>
 
             {/* Quick Contact Info */}
@@ -88,7 +88,7 @@ export default function Contact() {
                   <Mail className="w-5 h-5 text-[#2D2D2D]" />
                 </div>
                 <div>
-                  <p className="text-xs text-gray-400 font-medium">Email Me At</p>
+                  <p className="text-xs text-gray-400 font-medium">Email Kami</p>
                   <a href="mailto:hello@aurastudio.com" className="text-sm font-semibold hover:underline">
                     hello@aurastudio.com
                   </a>
@@ -100,16 +100,16 @@ export default function Contact() {
                   <MapPin className="w-5 h-5 text-[#2D2D2D]" />
                 </div>
                 <div>
-                  <p className="text-xs text-gray-400 font-medium">Location</p>
-                  <p className="text-sm font-semibold">Jakarta / Remote Worldwide</p>
+                  <p className="text-xs text-gray-400 font-medium">Lokasi</p>
+                  <p className="text-sm font-semibold">Jakarta, Indonesia / Remote Worldwide</p>
                 </div>
               </div>
             </div>
 
             {/* Social Icons matching Figma template */}
             <div className="pt-6 border-t border-gray-100">
-              <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4">
-                Connect Across Platforms
+              <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4 font-epilogue">
+                Terhubung di Media Sosial
               </p>
               <div className="flex items-center gap-3">
                 {[
@@ -148,10 +148,10 @@ export default function Contact() {
                   <CheckCircle2 className="w-8 h-8" />
                 </div>
                 <h3 className="text-2xl font-bold text-[#2D2D2D] font-epilogue">
-                  Message Sent Successfully!
+                  Pesan Berhasil Terkirim!
                 </h3>
                 <p className="text-gray-600 text-sm max-w-sm mx-auto">
-                  Thank you for reaching out. I'll get back to you within 24 hours.
+                  Terima kasih telah menghubungi kami. Kami akan merespons pesan Anda dalam 24 jam.
                 </p>
                 <button
                   onClick={() => {
@@ -160,20 +160,20 @@ export default function Contact() {
                   }}
                   className="mt-4 px-6 py-2.5 rounded-xl bg-[#2D2D2D] text-white text-xs font-semibold hover:bg-black"
                 >
-                  Send Another Message
+                  Kirim Pesan Lain
                 </button>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">
-                    Name
+                  <label htmlFor="name" className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2 font-epilogue">
+                    Nama Lengkap
                   </label>
                   <input
                     type="text"
                     id="name"
                     required
-                    placeholder="Your Name"
+                    placeholder="Masukkan nama Anda"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     className="w-full px-4 py-3.5 rounded-xl bg-white border border-gray-200 text-[#2D2D2D] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#2D2D2D] transition-all"
@@ -181,14 +181,14 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">
-                    Email
+                  <label htmlFor="email" className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2 font-epilogue">
+                    Alamat Email
                   </label>
                   <input
                     type="email"
                     id="email"
                     required
-                    placeholder="name@example.com"
+                    placeholder="nama@email.com"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     className="w-full px-4 py-3.5 rounded-xl bg-white border border-gray-200 text-[#2D2D2D] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#2D2D2D] transition-all"
@@ -196,14 +196,14 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">
-                    Message
+                  <label htmlFor="message" className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2 font-epilogue">
+                    Pesan Anda
                   </label>
                   <textarea
                     id="message"
                     rows={4}
                     required
-                    placeholder="Tell me about your project..."
+                    placeholder="Ceritakan tentang proyek atau ide Anda..."
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     className="w-full px-4 py-3.5 rounded-xl bg-white border border-gray-200 text-[#2D2D2D] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#2D2D2D] transition-all resize-none"
@@ -216,10 +216,10 @@ export default function Contact() {
                   className="w-full py-4 rounded-xl bg-[#2D2D2D] text-white font-bold text-sm hover:bg-black transition-all shadow-md flex items-center justify-center gap-2 group disabled:opacity-70"
                 >
                   {loading ? (
-                    <span>Sending...</span>
+                    <span>Mengirim...</span>
                   ) : (
                     <>
-                      <span>Submit Message</span>
+                      <span>Kirim Pesan</span>
                       <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </>
                   )}

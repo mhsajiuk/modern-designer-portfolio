@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Aura Studio - Modern Designer & Developer Portfolio
 
-## Getting Started
+A modern, high-performance personal portfolio website built with **React Next.js 15 (App Router)**, **TypeScript**, **Tailwind CSS v4**, and **Framer Motion**. Designed based on the Figma Portfolio Template community design.
 
-First, run the development server:
+![Aura Studio Portfolio Preview](public/images/hero_designer.png)
+
+## ✨ Features
+
+- 🎨 **Figma Inspired Layout**: Meticulously crafted design system based on Epilogue typography and clean modern aesthetics.
+- ⚡ **Next.js 15 App Router**: Ultra-fast page rendering, static site generation, and optimized image loading.
+- 🌊 **Framer Motion Animations**: Smooth page transitions, card hover elevation, and interactive modal dialogs.
+- 📱 **Fully Responsive**: Optimized for all device viewports (mobile, tablet, desktop).
+- 🏷️ **Project Filtering & Modals**: Interactive category filtering for projects and modal views for deep-dives.
+- ✉️ **Interactive Contact Form**: Client side validation with success state confetti effects.
+- 🔍 **SEO & OpenGraph Optimized**: Pre-configured metadata tags for social sharing.
+
+## 🛠️ Tech Stack
+
+- **Framework**: [Next.js 15](https://nextjs.org/)
+- **UI Library**: [React 19](https://react.dev/)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Typography**: [Google Epilogue & Inter Fonts](https://fonts.google.com/specimen/Epilogue)
+
+## 📁 Project Structure
+
+```
+d:\Portofolio/
+├── public/
+│   └── images/              # Assets & image files from Figma
+├── src/
+│   ├── app/
+│   │   ├── globals.css      # Design tokens & Tailwind CSS v4 setup
+│   │   ├── layout.tsx       # Root layout with Epilogue font & metadata
+│   │   └── page.tsx         # Portfolio main page
+│   ├── components/
+│   │   ├── Navbar.tsx       # Navigation header with mobile menu
+│   │   ├── Hero.tsx         # Hero banner with role title & CTA
+│   │   ├── BrandLogos.tsx   # Trusted brands section
+│   │   ├── Skills.tsx       # Core skills card grid
+│   │   ├── Portfolio.tsx    # Project gallery with category filter
+│   │   ├── ProjectModal.tsx # Interactive project detail popup
+│   │   ├── Testimonials.tsx # Client reviews & star ratings
+│   │   ├── Contact.tsx      # Contact form & social icons
+│   │   └── Footer.tsx       # Clean footer with back-to-top button
+│   ├── data/
+│   │   └── portfolioData.ts # Data model for skills, projects, reviews
+│   └── types/
+│       └── index.ts         # TypeScript type definitions
+└── package.json
+```
+
+## 🚀 Getting Started
+
+First, install the dependencies and run the development server:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Build for Production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm run start
+```
 
-## Learn More
+## 📜 License
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Distributed under the MIT License. See `LICENSE` for more information.

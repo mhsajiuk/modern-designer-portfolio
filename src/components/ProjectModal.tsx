@@ -36,7 +36,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
           <button
             onClick={onClose}
             className="absolute top-4 right-4 z-20 p-2.5 rounded-full bg-white/80 backdrop-blur-md text-[#2D2D2D] hover:bg-white hover:scale-105 transition-all shadow-md"
-            aria-label="Close modal"
+            aria-label="Tutup modal"
           >
             <X className="w-5 h-5" />
           </button>
@@ -47,6 +47,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
               src={project.image}
               alt={project.title}
               fill
+              unoptimized
               sizes="(max-width: 768px) 100vw, 800px"
               className="object-cover object-center"
             />
@@ -83,7 +84,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
             {/* Action Footer */}
             <div className="pt-6 border-t border-gray-100 flex items-center justify-between">
               <span className="text-xs text-gray-400 font-medium">
-                Category: {project.category}
+                Kategori: {project.category}
               </span>
               {project.link && (
                 <a
@@ -92,7 +93,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#2D2D2D] text-white font-semibold text-sm hover:bg-black transition-all shadow-md"
                 >
-                  <span>View Live Demo</span>
+                  <span>Lihat Demo Live</span>
                   <ExternalLink className="w-4 h-4" />
                 </a>
               )}

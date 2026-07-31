@@ -18,11 +18,11 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: "About", href: "#about" },
-    { name: "Work", href: "#work" },
-    { name: "Skills", href: "#skills" },
-    { name: "Testimonials", href: "#testimonials" },
-    { name: "Contact", href: "#contact" },
+    { name: "Tentang", href: "#about" },
+    { name: "Karya", href: "#work" },
+    { name: "Keahlian", href: "#skills" },
+    { name: "Testimoni", href: "#testimonials" },
+    { name: "Kontak", href: "#contact" },
   ];
 
   return (
@@ -61,7 +61,7 @@ export default function Navbar() {
             href="#contact"
             className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-[#2D2D2D] text-white text-sm font-semibold hover:bg-[#1a1a1a] transition-all transform hover:-translate-y-0.5 shadow-sm"
           >
-            <span>Let's Connect</span>
+            <span>Hubungi Saya</span>
             <ArrowUpRight className="w-4 h-4" />
           </Link>
         </div>
@@ -101,7 +101,7 @@ export default function Navbar() {
                 onClick={() => setMobileMenuOpen(false)}
                 className="mt-2 w-full flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-[#2D2D2D] text-white text-sm font-semibold hover:bg-[#1a1a1a]"
               >
-                <span>Let's Connect</span>
+                <span>Hubungi Saya</span>
                 <ArrowUpRight className="w-4 h-4" />
               </Link>
             </div>

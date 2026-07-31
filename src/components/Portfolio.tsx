@@ -9,13 +9,13 @@ import ProjectModal from "./ProjectModal";
 import { ArrowUpRight } from "lucide-react";
 
 export default function Portfolio() {
-  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [selectedCategory, setSelectedCategory] = useState("Semua");
   const [activeModalProject, setActiveModalProject] = useState<ProjectItem | null>(null);
 
-  const categories = ["All", "UI/UX", "Branding", "Art Direction"];
+  const categories = ["Semua", "UI/UX", "Branding", "Art Direction"];
 
   const filteredProjects =
-    selectedCategory === "All"
+    selectedCategory === "Semua"
       ? projectsData
       : projectsData.filter((p) => p.category === selectedCategory);
 
@@ -26,10 +26,10 @@ export default function Portfolio() {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div>
             <span className="text-xs font-bold tracking-widest text-gray-400 uppercase font-epilogue">
-              Selected Works
+              Karya Terpilih
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-[#2D2D2D] tracking-tight mt-2 font-epilogue">
-              Latest Work
+              Karya Terbaru
             </h2>
           </div>
 
@@ -69,6 +69,7 @@ export default function Portfolio() {
                   src={project.image}
                   alt={project.title}
                   fill
+                  unoptimized
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
                 />
@@ -79,7 +80,7 @@ export default function Portfolio() {
                 </div>
               </div>
 
-              {/* Title & Category Info (Matching Figma layout: Title top, Subtitle bottom) */}
+              {/* Title & Category Info */}
               <div className="space-y-1">
                 <h3 className="text-lg font-bold text-[#2D2D2D] font-epilogue group-hover:text-gray-600 transition-colors">
                   {project.title}
