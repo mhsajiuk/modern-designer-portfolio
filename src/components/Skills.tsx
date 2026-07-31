@@ -40,14 +40,14 @@ function SpotlightSkillCard({
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="relative p-8 rounded-3xl bg-white border border-gray-200/80 shadow-sm hover:shadow-2xl transition-all duration-500 overflow-hidden group cursor-pointer"
+      className="relative p-8 rounded-3xl bg-[#121318] border border-zinc-800/80 shadow-lg hover:shadow-2xl hover:shadow-purple-950/30 transition-all duration-500 overflow-hidden group cursor-pointer"
     >
-      {/* 21st.dev Spotlight Glow Effect */}
+      {/* 21st.dev Dark Mode Spotlight Glow Effect */}
       {isHovered && (
         <div
           className="pointer-events-none absolute -inset-px transition-opacity duration-300"
           style={{
-            background: `radial-gradient(350px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(139, 92, 246, 0.15), transparent 80%)`,
+            background: `radial-gradient(350px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(168, 85, 247, 0.2), transparent 80%)`,
           }}
         />
       )}
@@ -57,16 +57,16 @@ function SpotlightSkillCard({
         <motion.div
           whileHover={{ rotate: 5, scale: 1.1 }}
           transition={{ type: "spring", stiffness: 300, damping: 15 }}
-          className="w-16 h-16 rounded-2xl bg-purple-50 text-purple-700 flex items-center justify-center group-hover:bg-[#2D2D2D] group-hover:text-white transition-colors duration-300 shadow-sm"
+          className="w-16 h-16 rounded-2xl bg-purple-950/60 border border-purple-800/40 text-purple-400 flex items-center justify-center group-hover:bg-purple-600 group-hover:text-white transition-colors duration-300 shadow-md"
         >
           <IconComponent className="w-8 h-8 transition-transform duration-300 group-hover:scale-110" />
         </motion.div>
 
         <div>
-          <h3 className="text-xl font-bold text-[#2D2D2D] font-epilogue group-hover:text-purple-700 transition-colors">
+          <h3 className="text-xl font-bold text-white font-epilogue group-hover:text-purple-300 transition-colors">
             {skill.title}
           </h3>
-          <p className="mt-2 text-sm text-gray-600 leading-relaxed font-sans font-normal">
+          <p className="mt-2 text-sm text-zinc-400 leading-relaxed font-sans font-normal">
             {skill.description}
           </p>
         </div>
@@ -77,18 +77,18 @@ function SpotlightSkillCard({
 
 export default function Skills() {
   return (
-    <section id="services" className="relative py-24 bg-[#FAF9F6] border-t border-gray-100 overflow-hidden">
+    <section id="services" className="relative py-24 bg-[#0d0e12] border-t border-zinc-800/80 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         {/* Section Header */}
         <div className="max-w-3xl mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-50 text-purple-700 text-xs font-bold uppercase tracking-widest font-epilogue mb-2">
-            <Sparkles className="w-3.5 h-3.5" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-950/60 border border-purple-800/50 text-purple-300 text-xs font-bold uppercase tracking-widest font-epilogue mb-2">
+            <Sparkles className="w-3.5 h-3.5 text-purple-400" />
             <span>Keahlian Utama</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#2D2D2D] tracking-tight font-epilogue">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight font-epilogue">
             Spesialisasi Desain & Pengembangan
           </h2>
-          <p className="text-gray-600 mt-4 text-base leading-relaxed font-sans">
+          <p className="text-zinc-400 mt-4 text-base leading-relaxed font-sans">
             Menggabungkan estetika visual tingkat tinggi dengan keahlian rekayasa web modern untuk membangun produk digital dan solusi brand yang luar biasa.
           </p>
         </div>

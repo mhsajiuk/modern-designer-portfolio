@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     siteName: "Aura Studio Portfolio",
     images: [
       {
-        url: "/images/hero_designer.png",
+        url: "/images/hero_designer.jpg",
         width: 1200,
         height: 630,
         alt: "Aura Studio Portfolio",
@@ -43,8 +43,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="id" className={`${epilogue.variable} ${inter.variable} scroll-smooth`}>
-      <body className="min-h-screen bg-white text-[#2D2D2D] antialiased selection:bg-[#2D2D2D] selection:text-white">
+    <html lang="id" className={`${epilogue.variable} ${inter.variable} scroll-smooth dark`}>
+      <body className="min-h-screen bg-[#09090b] text-[#f4f4f5] antialiased selection:bg-purple-600 selection:text-white">
         {children}
       </body>
     </html>

@@ -2,19 +2,20 @@
 
 @layer base {
   :root {
-    --background: #ffffff;
-    --foreground: #2d2d2d;
-    --card: #ffffff;
-    --card-foreground: #2d2d2d;
-    --muted: #f8f9fa;
-    --muted-foreground: #6c757d;
-    --accent: #2d2d2d;
+    --background: #09090b;
+    --foreground: #f4f4f5;
+    --card: #121318;
+    --card-foreground: #f4f4f5;
+    --muted: #181920;
+    --muted-foreground: #a1a1aa;
+    --accent: #8b5cf6;
     --accent-foreground: #ffffff;
-    --border: #f0f0f0;
+    --border: rgba(255, 255, 255, 0.08);
   }
 
   html {
     scroll-behavior: smooth;
+    color-scheme: dark;
   }
 
   body {
@@ -25,18 +26,28 @@
   }
 }
 
-/* 21st.dev Styled Custom Utilities & Animations */
+/* 21st.dev Dark Theme Styled Custom Utilities & Animations */
 .glass-card {
-  background: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: rgba(18, 19, 24, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card-hover {
+  transition: all 0.4s ease;
+}
+
+.glass-card-hover:hover {
+  background: rgba(24, 25, 32, 0.9);
+  border-color: rgba(139, 92, 246, 0.4);
+  box-shadow: 0 0 30px rgba(139, 92, 246, 0.15);
 }
 
 .dark-glass-card {
-  background: rgba(45, 45, 45, 0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: rgba(12, 13, 17, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -45,34 +56,34 @@
 }
 
 .custom-scrollbar::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #09090b;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background: #c1c1c1;
+  background: #27272a;
   border-radius: 4px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: #a8a8a8;
+  background: #3f3f46;
 }
 
-/* Background Grid Pattern */
+/* Background Dark Grid Pattern */
 .bg-grid-pattern {
   background-size: 40px 40px;
   background-image: 
-    linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
 }
 
 .bg-dots-pattern {
-  background-image: radial-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px);
   background-size: 24px 24px;
 }
 
-/* Animated Shimmer Text */
+/* Animated Shimmer Text for Dark Mode */
 .shimmer-text {
-  background: linear-gradient(90deg, #2d2d2d 0%, #8b5cf6 50%, #2d2d2d 100%);
+  background: linear-gradient(90deg, #ffffff 0%, #a855f7 40%, #ec4899 70%, #ffffff 100%);
   background-size: 200% auto;
   color: transparent;
   -webkit-background-clip: text;
@@ -95,12 +106,12 @@
 /* Pulse Glow Keyframes */
 @keyframes pulseGlow {
   0%, 100% {
-    opacity: 0.4;
+    opacity: 0.3;
     transform: scale(1);
   }
   50% {
-    opacity: 0.8;
-    transform: scale(1.1);
+    opacity: 0.7;
+    transform: scale(1.15);
   }
 }
 
@@ -120,8 +131,4 @@
 
 .animate-float {
   animation: float 5s ease-in-out infinite;
-}
-
-.animate-float-delayed {
-  animation: float 6s ease-in-out infinite 2s;
 }

@@ -52,15 +52,15 @@ export default function Contact() {
         particleCount: 120,
         spread: 80,
         origin: { y: 0.6 },
-        colors: ["#8b5cf6", "#ec4899", "#3b82f6", "#10b981", "#f59e0b"],
+        colors: ["#a855f7", "#ec4899", "#3b82f6", "#10b981", "#f59e0b"],
       });
     }, 800);
   };
 
   return (
-    <section id="contact" className="relative py-24 bg-white border-t border-gray-100 overflow-hidden">
+    <section id="contact" className="relative py-24 bg-[#0d0e12] border-t border-zinc-800/80 overflow-hidden">
       {/* Background Lighting Accent */}
-      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full bg-gradient-to-tr from-purple-400/10 to-indigo-400/10 blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full bg-gradient-to-tr from-purple-600/10 to-indigo-600/10 blur-3xl pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
@@ -73,48 +73,48 @@ export default function Contact() {
             className="lg:col-span-6 space-y-8"
           >
             <div>
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-50 text-purple-700 text-xs font-bold uppercase tracking-widest font-epilogue mb-2">
-                <Sparkles className="w-3.5 h-3.5" />
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-950/60 border border-purple-800/50 text-purple-300 text-xs font-bold uppercase tracking-widest font-epilogue mb-2">
+                <Sparkles className="w-3.5 h-3.5 text-purple-400" />
                 <span>Mari Berkolaborasi</span>
               </div>
-              <h2 className="text-4xl sm:text-5xl font-extrabold text-[#2D2D2D] tracking-tight mt-2 font-epilogue leading-tight">
+              <h2 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight mt-2 font-epilogue leading-tight">
                 Punya Proyek Impian? <br />
                 <span className="shimmer-text">Hubungi Saya.</span>
               </h2>
             </div>
 
-            <p className="text-gray-600 text-base sm:text-lg leading-relaxed max-w-md font-sans">
+            <p className="text-zinc-400 text-base sm:text-lg leading-relaxed max-w-md font-sans">
               Saya selalu terbuka untuk mendiskusikan desain produk baru, branding, atau proyek aplikasi web modern. Mari wujudkan ide hebat Anda bersama.
             </p>
 
             {/* Quick Contact Info */}
             <div className="space-y-4 pt-2">
-              <div className="flex items-center gap-4 text-gray-700">
-                <div className="w-12 h-12 rounded-2xl bg-purple-50 flex items-center justify-center text-purple-700 shrink-0 shadow-sm">
+              <div className="flex items-center gap-4 text-zinc-300">
+                <div className="w-12 h-12 rounded-2xl bg-purple-950/60 border border-purple-800/40 flex items-center justify-center text-purple-400 shrink-0 shadow-md">
                   <Mail className="w-5 h-5" />
                 </div>
                 <div>
-                  <p className="text-xs text-gray-400 font-bold uppercase tracking-wider font-epilogue">Email Kami</p>
-                  <a href="mailto:hello@aurastudio.id" className="text-sm sm:text-base font-extrabold text-[#2D2D2D] hover:text-purple-700 transition-colors font-epilogue">
+                  <p className="text-xs text-zinc-400 font-bold uppercase tracking-wider font-epilogue">Email Kami</p>
+                  <a href="mailto:hello@aurastudio.id" className="text-sm sm:text-base font-extrabold text-white hover:text-purple-400 transition-colors font-epilogue">
                     hello@aurastudio.id
                   </a>
                 </div>
               </div>
 
-              <div className="flex items-center gap-4 text-gray-700">
-                <div className="w-12 h-12 rounded-2xl bg-purple-50 flex items-center justify-center text-purple-700 shrink-0 shadow-sm">
+              <div className="flex items-center gap-4 text-zinc-300">
+                <div className="w-12 h-12 rounded-2xl bg-purple-950/60 border border-purple-800/40 flex items-center justify-center text-purple-400 shrink-0 shadow-md">
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
-                  <p className="text-xs text-gray-400 font-bold uppercase tracking-wider font-epilogue">Lokasi Studio</p>
-                  <p className="text-sm sm:text-base font-extrabold text-[#2D2D2D] font-epilogue">Jakarta & Bandung, Indonesia</p>
+                  <p className="text-xs text-zinc-400 font-bold uppercase tracking-wider font-epilogue">Lokasi Studio</p>
+                  <p className="text-sm sm:text-base font-extrabold text-white font-epilogue">Jakarta & Bandung, Indonesia</p>
                 </div>
               </div>
             </div>
 
             {/* Social Icons */}
-            <div className="pt-6 border-t border-gray-100">
-              <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4 font-epilogue">
+            <div className="pt-6 border-t border-zinc-800/80">
+              <p className="text-xs font-bold text-zinc-400 uppercase tracking-wider mb-4 font-epilogue">
                 Terhubung di Media Sosial
               </p>
               <div className="flex items-center gap-3">
@@ -132,7 +132,7 @@ export default function Contact() {
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.1, y: -2 }}
                     whileTap={{ scale: 0.95 }}
-                    className="w-11 h-11 rounded-xl bg-gray-100/80 flex items-center justify-center text-[#2D2D2D] hover:bg-[#2D2D2D] hover:text-white transition-all shadow-sm"
+                    className="w-11 h-11 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-300 hover:bg-purple-600 hover:text-white hover:border-purple-500 transition-all shadow-md"
                     aria-label={social.name}
                   >
                     <social.icon className="w-5 h-5" />
@@ -148,7 +148,7 @@ export default function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="lg:col-span-6 bg-[#FAF9F6] p-8 sm:p-10 rounded-3xl border border-gray-200/80 shadow-lg relative overflow-hidden"
+            className="lg:col-span-6 bg-[#121318] p-8 sm:p-10 rounded-3xl border border-zinc-800 shadow-2xl relative overflow-hidden"
           >
             {submitted ? (
               <div className="py-12 text-center space-y-4">
@@ -156,14 +156,14 @@ export default function Contact() {
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
                   transition={{ type: "spring", stiffness: 300, damping: 15 }}
-                  className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto shadow-md"
+                  className="w-16 h-16 rounded-full bg-emerald-950 border border-emerald-700/50 text-emerald-400 flex items-center justify-center mx-auto shadow-lg"
                 >
                   <CheckCircle2 className="w-8 h-8" />
                 </motion.div>
-                <h3 className="text-2xl font-bold text-[#2D2D2D] font-epilogue">
+                <h3 className="text-2xl font-bold text-white font-epilogue">
                   Pesan Berhasil Terkirim!
                 </h3>
-                <p className="text-gray-600 text-sm max-w-sm mx-auto font-sans">
+                <p className="text-zinc-400 text-sm max-w-sm mx-auto font-sans">
                   Terima kasih telah menghubungi kami. Kami akan merespons pesan Anda dalam kurun waktu 24 jam.
                 </p>
                 <button
@@ -171,7 +171,7 @@ export default function Contact() {
                     setSubmitted(false);
                     setFormData({ name: "", email: "", message: "" });
                   }}
-                  className="mt-4 px-6 py-3 rounded-xl bg-[#2D2D2D] text-white text-xs font-bold uppercase tracking-wider hover:bg-black font-epilogue transition-all"
+                  className="mt-4 px-6 py-3 rounded-xl bg-purple-600 text-white text-xs font-bold uppercase tracking-wider hover:bg-purple-700 font-epilogue transition-all shadow-lg"
                 >
                   Kirim Pesan Lain
                 </button>
@@ -179,7 +179,7 @@ export default function Contact() {
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2 font-epilogue">
+                  <label htmlFor="name" className="block text-xs font-bold text-zinc-300 uppercase tracking-wider mb-2 font-epilogue">
                     Nama Lengkap
                   </label>
                   <input
@@ -189,12 +189,12 @@ export default function Contact() {
                     placeholder="Masukkan nama Anda"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-4 py-3.5 rounded-xl bg-white border border-gray-200 text-[#2D2D2D] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-600 transition-all font-sans text-sm"
+                    className="w-full px-4 py-3.5 rounded-xl bg-[#181920] border border-zinc-800 text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all font-sans text-sm"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2 font-epilogue">
+                  <label htmlFor="email" className="block text-xs font-bold text-zinc-300 uppercase tracking-wider mb-2 font-epilogue">
                     Alamat Email
                   </label>
                   <input
@@ -204,12 +204,12 @@ export default function Contact() {
                     placeholder="nama@email.com"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-4 py-3.5 rounded-xl bg-white border border-gray-200 text-[#2D2D2D] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-600 transition-all font-sans text-sm"
+                    className="w-full px-4 py-3.5 rounded-xl bg-[#181920] border border-zinc-800 text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all font-sans text-sm"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2 font-epilogue">
+                  <label htmlFor="message" className="block text-xs font-bold text-zinc-300 uppercase tracking-wider mb-2 font-epilogue">
                     Pesan Detail Proyek
                   </label>
                   <textarea
@@ -219,7 +219,7 @@ export default function Contact() {
                     placeholder="Ceritakan tentang proyek atau ide Anda..."
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full px-4 py-3.5 rounded-xl bg-white border border-gray-200 text-[#2D2D2D] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-600 transition-all resize-none font-sans text-sm"
+                    className="w-full px-4 py-3.5 rounded-xl bg-[#181920] border border-zinc-800 text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all resize-none font-sans text-sm"
                   />
                 </div>
 
@@ -228,7 +228,7 @@ export default function Contact() {
                   whileTap={{ scale: 0.98 }}
                   type="submit"
                   disabled={loading}
-                  className="w-full py-4 rounded-2xl bg-[#2D2D2D] text-white font-bold text-sm hover:bg-black transition-all shadow-xl flex items-center justify-center gap-2 group disabled:opacity-70 font-epilogue relative overflow-hidden"
+                  className="w-full py-4 rounded-2xl bg-gradient-to-r from-purple-600 via-pink-600 to-indigo-600 text-white font-bold text-sm hover:opacity-95 transition-all shadow-xl shadow-purple-950/50 flex items-center justify-center gap-2 group disabled:opacity-70 font-epilogue relative overflow-hidden"
                 >
                   {loading ? (
                     <span>Mengirim...</span>

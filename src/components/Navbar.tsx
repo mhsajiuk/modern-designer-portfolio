@@ -37,22 +37,22 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-white/80 backdrop-blur-xl shadow-md py-4 border-b border-gray-200/60"
+          ? "bg-[#09090b]/85 backdrop-blur-xl shadow-lg py-4 border-b border-zinc-800/80"
           : "bg-transparent py-6"
       }`}
     >
       {/* 21st.dev Top Scroll Progress Indicator */}
       <motion.div
-        className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-purple-600 via-pink-500 to-indigo-600 origin-left"
+        className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-400 origin-left"
         style={{ scaleX }}
       />
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 flex items-center justify-between">
         {/* Logo */}
         <Link href="#" className="group flex items-center gap-2">
-          <span className="font-extrabold text-xl tracking-tight text-[#2D2D2D] font-epilogue flex items-center gap-1.5">
-            Aura<span className="text-purple-600 group-hover:text-[#2D2D2D] transition-colors">Studio</span>
-            <Sparkles className="w-4 h-4 text-purple-600 animate-pulse" />
+          <span className="font-extrabold text-xl tracking-tight text-white font-epilogue flex items-center gap-1.5">
+            Aura<span className="text-purple-400 group-hover:text-white transition-colors">Studio</span>
+            <Sparkles className="w-4 h-4 text-purple-400 animate-pulse" />
           </span>
         </Link>
 
@@ -62,7 +62,7 @@ export default function Navbar() {
             <Link
               key={link.name}
               href={link.href}
-              className="text-xs font-bold uppercase tracking-wider text-[#2D2D2D]/80 hover:text-purple-600 transition-colors relative py-1 font-epilogue after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-purple-600 hover:after:w-full after:transition-all after:duration-300"
+              className="text-xs font-bold uppercase tracking-wider text-zinc-300 hover:text-purple-400 transition-colors relative py-1 font-epilogue after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-purple-500 hover:after:w-full after:transition-all after:duration-300"
             >
               {link.name}
             </Link>
@@ -73,7 +73,7 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-4">
           <Link
             href="#contact"
-            className="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full bg-[#2D2D2D] text-white text-xs font-bold uppercase tracking-wider hover:bg-black transition-all transform hover:-translate-y-0.5 shadow-md font-epilogue"
+            className="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full bg-white text-black text-xs font-bold uppercase tracking-wider hover:bg-purple-500 hover:text-white transition-all transform hover:-translate-y-0.5 shadow-lg font-epilogue"
           >
             <span>Hubungi Saya</span>
             <ArrowUpRight className="w-4 h-4" />
@@ -83,7 +83,7 @@ export default function Navbar() {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden p-2 text-[#2D2D2D] focus:outline-none"
+          className="md:hidden p-2 text-white focus:outline-none"
           aria-label="Toggle menu"
         >
           {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -97,7 +97,7 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white/95 backdrop-blur-xl border-b border-gray-100 px-6 py-6 shadow-xl overflow-hidden"
+            className="md:hidden bg-[#121318]/95 backdrop-blur-2xl border-b border-zinc-800 px-6 py-6 shadow-2xl overflow-hidden"
           >
             <div className="flex flex-col gap-4">
               {navLinks.map((link) => (
@@ -105,7 +105,7 @@ export default function Navbar() {
                   key={link.name}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="text-sm font-bold uppercase tracking-wider text-[#2D2D2D] py-2 border-b border-gray-100 font-epilogue"
+                  className="text-sm font-bold uppercase tracking-wider text-zinc-200 py-2 border-b border-zinc-800/60 font-epilogue"
                 >
                   {link.name}
                 </Link>
@@ -113,7 +113,7 @@ export default function Navbar() {
               <Link
                 href="#contact"
                 onClick={() => setMobileMenuOpen(false)}
-                className="mt-2 w-full flex items-center justify-center gap-2 px-5 py-3 rounded-2xl bg-[#2D2D2D] text-white text-xs font-bold uppercase tracking-wider hover:bg-black font-epilogue"
+                className="mt-2 w-full flex items-center justify-center gap-2 px-5 py-3 rounded-2xl bg-purple-600 text-white text-xs font-bold uppercase tracking-wider hover:bg-purple-700 font-epilogue"
               >
                 <span>Hubungi Saya</span>
                 <ArrowUpRight className="w-4 h-4" />

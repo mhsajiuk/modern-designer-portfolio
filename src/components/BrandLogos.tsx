@@ -5,9 +5,9 @@ import { brandLogos } from "@/data/portfolioData";
 
 export default function BrandLogos() {
   return (
-    <section className="py-12 bg-white border-y border-gray-100">
+    <section className="py-12 bg-[#0d0e12] border-y border-zinc-800/80">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        <p className="text-center text-xs font-semibold tracking-widest text-gray-400 uppercase mb-8 font-epilogue">
+        <p className="text-center text-xs font-semibold tracking-widest text-zinc-500 uppercase mb-8 font-epilogue">
           Dipercaya oleh Perusahaan & Studio Terkemuka
         </p>
 
@@ -19,9 +19,9 @@ export default function BrandLogos() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: idx * 0.1 }}
               viewport={{ once: true }}
-              className="flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300 transform hover:scale-105"
+              className="flex items-center justify-center transition-all duration-300 transform hover:scale-105"
             >
-              <span className="text-xl sm:text-2xl font-black text-[#2D2D2D]/70 hover:text-[#2D2D2D] font-epilogue tracking-tight">
+              <span className="text-xl sm:text-2xl font-black text-zinc-400 hover:text-white font-epilogue tracking-tight transition-colors">
                 {brand.name}
               </span>
             </motion.div>

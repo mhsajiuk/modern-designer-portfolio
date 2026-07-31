@@ -9,15 +9,15 @@ export default function Footer() {
   };
 
   return (
-    <footer className="py-12 bg-[#2D2D2D] text-white border-t border-gray-800">
+    <footer className="py-12 bg-[#050507] text-white border-t border-zinc-800/80">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-6">
         {/* Brand Copyright */}
         <div className="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
           <Link href="#" className="font-extrabold text-xl tracking-tight text-white font-epilogue">
-            Aura<span className="text-gray-400">Studio</span>
+            Aura<span className="text-purple-400">Studio</span>
           </Link>
-          <span className="hidden sm:inline text-gray-600">|</span>
-          <p className="text-xs text-gray-400">
+          <span className="hidden sm:inline text-zinc-700">|</span>
+          <p className="text-xs text-zinc-400">
             © {new Date().getFullYear()} Aura Studio. Dirancang & Dikembangkan dengan Next.js & Tailwind CSS.
           </p>
         </div>
@@ -25,11 +25,11 @@ export default function Footer() {
         {/* Back to top button */}
         <button
           onClick={scrollToTop}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 hover:bg-white/20 text-xs font-semibold text-white transition-all"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-zinc-900 border border-zinc-800 hover:border-purple-500/50 hover:bg-zinc-800 text-xs font-semibold text-white transition-all shadow-md"
           aria-label="Kembali ke atas"
         >
           <span>Kembali ke Atas</span>
-          <ArrowUp className="w-4 h-4" />
+          <ArrowUp className="w-4 h-4 text-purple-400" />
         </button>
       </div>
     </footer>
