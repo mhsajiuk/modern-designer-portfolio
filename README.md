@@ -2,7 +2,8 @@
 
 A modern, high-performance personal portfolio website built with **React Next.js 15 (App Router)**, **TypeScript**, **Tailwind CSS v4**, and **Framer Motion**. Designed based on the Figma Portfolio Template community design.
 
-![Aura Studio Portfolio Preview](public/images/hero_designer.png)
+<img width="1290" height="684" alt="image" src="https://github.com/user-attachments/assets/2c226df4-715c-4057-93ce-db45d29ad3a3" />
+
 
 ## ✨ Features
 
